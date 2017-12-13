@@ -1,0 +1,114 @@
+- resgate e pesquisa de definições e exemplos
+	- é um mecanismo por meio do qual selecionamos as funcionalidades utilizadas de forma dinâmica
+	- os mesmos atributos e objetos podem ser utilizados em objetos distintos, porém, com implementações lógicas diferentes
+	
+public class Animal {
+	private String nome;
+	private Raca raca;
+
+	public Animal setNome(String nome) {
+		this.nome = nome;
+
+		return this;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public Animal setRaca(Raca raca) {
+		this.raca = raca;
+
+		return this;
+	}
+
+	public Raca getRaca() {
+		return raca;
+	}
+}
+
+public class Cachorro extends Animal {
+
+}
+
+
+public class Gato extends Animal {
+
+}
+
+public class Cliente {
+	private Vector<Animal> animal;
+	
+	public Cliente() {
+		animal = new Vector<>();
+	}
+
+	public void addAnimal(Animal animal) {
+		this.animal.add(animal);
+	}
+
+	public Animal findByName(String name)
+	{
+		for (Animal a : animal)
+		{
+			if ( a.getNome().equals(name) )
+				return a;
+		}
+
+		return null;
+	}
+
+	public Animal findByRaca(Raca raca)
+	{
+		for (Animal a : animal)
+		{
+			if ( a.getRaca().equals(raca) )
+				return a;
+		}
+
+		return null;
+	}
+}
+
+public enum Raca {
+	PERDE_PELO,
+	GUAPECA,
+	VIRALATA
+}
+
+- atualização da ferramenta para verificação
+	1) sobrecarga
+	2) sobrescrita
+	3) de inclusão
+	4) paramétrico
+
+- verificação de 5 classes do JSE ou de repositório Github (podem ser as mesmas)	
+Classe 1) TelaDashboard.java:
+	1) sobrecarga: sim
+	2) sobrescrita: não
+	3) de inclusão: não
+	4) paramétrico: não
+
+Classe 2) Totalizador.java:
+	1) sobrecarga: não
+	2) sobrescrita: sim
+	3) de inclusão: não
+	4) paramétrico: não
+
+Classe 3) Processando.java:
+	1) sobrecarga: não
+	2) sobrescrita: sim
+	3) de inclusão: sim
+	4) paramétrico: sim
+
+Classe 4) SubMenu.java
+	1) sobrecarga: não
+	2) sobrescrita: sim
+	3) de inclusão: não
+	4) paramétrico: sim
+
+Classe 5) Fundo.java
+	1) sobrecarga: não
+	2) sobrescrita: sim
+	3) de inclusão: não
+	4) paramétrico: não
